@@ -1,0 +1,44 @@
+<style type="text/css">
+#overlay {
+position: absolute;
+top: 100px;
+left: 100px;
+color: #FFF;
+border-style: solid;
+border-color: #ff0000;
+text-align: center;
+font-size: 20px;
+/*background-color: rgba(221, 221, 221, 0.3);*/
+width: 200px;
+height: 200px;
+z-index: 2147483647;
+}
+#v {
+z-index: 1;
+}
+</style>
+<video id="v" controls>
+  <source id='mp4'
+  src="https://storage.googleapis.com/media-demos/workspace_safety.mp4"
+  type='video/mp4'>
+  <p>Your user agent does not support the HTML5 Video element.</p>
+</video>
+<div id="overlay"></div>
+
+<script type="text/javascript">
+var drawBoxWithText = function(bbox, txt) {
+  var video = document.getElementById('v');
+  var height = video.videoHeight;
+  var width = video.videoWidth;
+  
+}
+
+</script>
+
+<script type="text/javascript">
+var overlay= document.getElementById('overlay');
+var video= document.getElementById('v');
+video.addEventListener('timeupdate', function() {
+overlay.innerHTML = "现在播放时间 " + video.currentTime;
+}, false);
+</script>
